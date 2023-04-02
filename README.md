@@ -1,6 +1,9 @@
 # AWS Lambda RPC Client 
 A simple RPC client that can be used to debug AWS lambda functions locally that are written in Go. This is made possible by the fact that the AWS SDK for Golang implements lambda functions as RPC servers, making them very easy to invoke in a multitude of different environments.
 
+## :warning: Important :warning:
+Note that when you run your AWS Lambda function locally on your machine, a huge benefit to doing it this way, is that if your Lambda uses any other AWS service clients (i.e DynamoDB, S3, Secrets Manager, etc.), you can actually debug those live deployed cloud based resources without doing anything else. No 3rd party libraries, no frameworks, no containers. The only catch is that you have to have your AWS shared credentials file updated in such a way that the session that the Lambda creates can be authenticated.
+
 ### Compile From Source (default build with flag for removing the debug symbols from the binary)
 
 ```powershell
