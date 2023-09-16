@@ -1,4 +1,4 @@
-module github.com/JS10X/aws-lambda-rpc-client
+module github.com/js10x/aws-lambda-rpc-client
 
 go 1.17
 
