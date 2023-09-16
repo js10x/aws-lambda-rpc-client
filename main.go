@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/rpc"
 	"os"
@@ -43,7 +43,7 @@ func main() {
 		log.Fatalln(err)
 	}
 	defer openEventFile.Close()
-	eventFileBytes, err := ioutil.ReadAll(openEventFile)
+	eventFileBytes, err := io.ReadAll(openEventFile)
 	if err != nil {
 		log.Fatalln(err)
 	}
